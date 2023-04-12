@@ -2,6 +2,10 @@ export const themeColors = {
   white: '#ffffff',
   black: '#000000',
   fontGray: '#808080',
+  lightGray: '#ededed',
+  musturd: '#ED7360',
+  lightGreen: '#67DDA0',
+  fbBlue: '#3173F1',
 };
 export const APP_FONT_SIZE = {
   h1: 32,
