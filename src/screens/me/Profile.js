@@ -17,16 +17,23 @@ export default function Profile() {
   const editProfile = () => {
     navigation.navigate('EditProfile');
   };
+  function HandleSettingNavigation() {
+    navigation.navigate('Setting');
+  }
+  function HandleFindFriendNavigation() {
+    navigation.navigate('FindFriends');
+  }
   return (
     <ScrollView contentContainerStyle={{flex: 1}}>
       <View style={styles.container}>
         <StatusBar backgroundColor={'white'} barStyle={'dark-content'} />
         <Header
+          onpressleft={HandleFindFriendNavigation}
           Lefticons={require('../../assets/icons/add-user.png')}
           righticon={require('../../assets/icons/more.png')}
           title={'Hamad Mirza'}
-          borderBottom={true}
           size={20}
+          onpressright={HandleSettingNavigation}
         />
         <View style={styles.userDetailsDiv}>
           <View style={styles.profilePicDiv}>

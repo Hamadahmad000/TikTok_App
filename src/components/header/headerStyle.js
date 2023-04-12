@@ -10,13 +10,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 13,
     alignItems: 'center',
     paddingVertical: 15,
-
+    
     backgroundColor: themeColors.white,
   },
-  headerIcons: {
-    height: 19,
-    width: 19,
-  },
+ 
   center: {
     fontSize: APP_FONT_SIZE.h4,
     fontWeight: '600',

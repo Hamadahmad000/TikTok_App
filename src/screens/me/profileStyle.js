@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 0.2,
     paddingVertical: 10,
     borderBottomWidth: 0.2,
+    borderColor: themeColors.fontGray,
   },
   BottomIcon: {
     height: 17,

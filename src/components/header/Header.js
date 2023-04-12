@@ -12,7 +12,10 @@ export default function Header({
   onpressright,
   size,
 }) {
-  const borderBottmStyle = {borderBottomWidth: 0.2};
+  const borderBottmStyle = {
+    borderBottomWidth: 0.2,
+    borderBottomColor: themeColors.fontGray,
+  };
   function handleLeftIcon() {
     onpressleft ? onpressleft() : null;
   }

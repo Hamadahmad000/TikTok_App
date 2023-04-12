@@ -18,7 +18,6 @@ export default function Inbox() {
         title={'All acivity'}
         righticon={require('../../assets/icons/MessageIcon.png')}
         onpressright={HandleNavigate}
-        borderBottom={true}
       />
       <View style={styles.messages}>
         <Image
