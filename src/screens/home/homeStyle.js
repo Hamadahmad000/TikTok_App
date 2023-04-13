@@ -4,7 +4,8 @@ import {APP_FONT_SIZE} from '../../constant/Theme';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: '90%',
+    // flex: 1,
   },
   changeScreen: {
     flexDirection: 'row',
@@ -13,7 +14,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
 
     position: 'absolute',
-    bottom: APP_SIZE.screenHeight - APP_SIZE.screenHeight / 2 / 3,
+    bottom: APP_SIZE.screenHeight - APP_SIZE.screenHeight / 2 / 2,
   },
   followingScreen: {
     fontSize: APP_FONT_SIZE.h4,

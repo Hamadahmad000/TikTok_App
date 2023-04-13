@@ -98,14 +98,14 @@ const styles = StyleSheet.create({
     width: 20,
   },
   userPublicVideos: {
-    height: '100%',
+    height: '50%',
     width: APP_SIZE.screenWith,
     flexDirection: 'row',
   },
 
   publicVideos: {height: '100%', width: APP_SIZE.screenWith / 3},
   publicVideosDiv: {
-    height: '25%',
+    height: '50%',
   },
   videoIcon: {
     height: 10,

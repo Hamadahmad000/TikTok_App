@@ -28,6 +28,32 @@ const styles = StyleSheet.create({
   text2: {
     fontSize: APP_FONT_SIZE.h5,
   },
+  OptionContainer: {
+    position: 'absolute',
+    top: 50,
+    alignSelf: 'center',
+    padding: 13,
+    width: '100%',
+    backgroundColor: 'white',
+    borderBottomWidth: 1,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    borderColor: themeColors.lightGray,
+  },
+  option: {
+    flexDirection: 'row',
+    marginVertical: 10,
+  },
+  optionLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  leftText: {
+    paddingLeft: 10,
+    fontSize: APP_FONT_SIZE.h5,
+    color: themeColors.black,
+    fontWeight: '600',
+  },
 });
 
 export default styles;

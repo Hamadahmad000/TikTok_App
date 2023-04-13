@@ -2,6 +2,7 @@ import {View, Text, TouchableOpacity, Image} from 'react-native';
 import React from 'react';
 import styles from './headerStyle';
 import {themeColors} from '../../constant/Theme';
+import {AppIcon} from '../../helper/iconHelper';
 
 export default function Header({
   Lefticons,
@@ -11,6 +12,10 @@ export default function Header({
   onpressleft,
   onpressright,
   size,
+  showOptioTag,
+  showOption,
+
+  onpressTag,
 }) {
   const borderBottmStyle = {
     borderBottomWidth: 0.2,
@@ -36,7 +41,23 @@ export default function Header({
       ) : (
         <View></View>
       )}
-      {title ? <Text style={styles.center}>{title}</Text> : <View></View>}
+      {title ? (
+        <View style={styles.tag}>
+          <Text style={styles.center}>{title}</Text>
+          {showOptioTag ? (
+            <TouchableOpacity style={styles.tagIcon} onPress={onpressTag}>
+              <AppIcon
+                name={
+                  showOption ? 'chevron-up-outline' : 'chevron-down-outline'
+                }
+                size={20}
+              />
+            </TouchableOpacity>
+          ) : null}
+        </View>
+      ) : (
+        <View></View>
+      )}
       {righticon ? (
         <TouchableOpacity onPress={handleRightIcon}>
           <Image source={righticon} style={headerIcons} resizeMode="contain" />

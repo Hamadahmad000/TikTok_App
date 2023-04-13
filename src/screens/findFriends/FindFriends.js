@@ -2,10 +2,15 @@ import {View, Text, TouchableOpacity, Image} from 'react-native';
 import React from 'react';
 import styles from './findFriendStye';
 import Header from '../../components/header/Header';
-import Input from '../../components/input/input';
+import Input from '../../components/input/Input';
 import {AppIcon} from '../../helper/iconHelper';
 import {themeColors} from '../../constant/Theme';
+import {useNavigation} from '@react-navigation/native';
 export default function FindFriends() {
+  const navigation = useNavigation();
+  function HandleBack() {
+    navigation.goBack();
+  }
   return (
     <View style={styles.container}>
       <Header
@@ -13,6 +18,7 @@ export default function FindFriends() {
         title={'Find friends'}
         righticon={require('../../assets/icons/Scanner.png')}
         size={18}
+        onpressleft={HandleBack}
       />
       <View style={styles.input}>
         <Input

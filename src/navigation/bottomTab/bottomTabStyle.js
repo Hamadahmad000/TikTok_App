@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   NavStyle: {
-    height: responsiveWidth(16),
+    height: '10%',
     alignItems: 'center',
     width: APP_SIZE.screenWith,
     position: 'absolute',
@@ -21,23 +21,16 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     flexDirection: 'row',
   },
-  PostIconDiv: {
-    backgroundColor: '#ffffff',
-
-    width: responsiveWidth(10),
-    borderRadius: 5,
-    marginBottom: 15,
-    justifyContent: 'center',
-    paddingVertical: 0,
-    alignItems: 'center',
-  },
+  PostIconDiv: {},
   PostIcon: {
-    fontSize: APP_FONT_SIZE.h2,
-    fontWeight: '600',
-    color: '#000000',
-    textAlign: 'center',
-    marginVertical: 0,
-    paddingVertical: 0,
+    height: 45,
+    width: 45,
+    marginBottom: 20,
+  },
+  PostIconDark: {
+    height: 45,
+    width: 45,
+    marginBottom: 20,
   },
 });
 

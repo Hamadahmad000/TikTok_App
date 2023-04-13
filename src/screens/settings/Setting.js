@@ -166,7 +166,7 @@ export default function Setting() {
           <TouchableOpacity style={styles.settingDiv}>
             <View style={styles.settingNamediv}>
               <Text style={styles.settingIcon}>
-                <AppIcon name={'accessibility-outline'} size={18} />
+                <AppIcon name={'body-outline'} size={18} />
               </Text>
               <Text style={styles.setting}>Accessibility</Text>
             </View>

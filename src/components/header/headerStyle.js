@@ -10,14 +10,21 @@ const styles = StyleSheet.create({
     paddingHorizontal: 13,
     alignItems: 'center',
     paddingVertical: 15,
-    
+
     backgroundColor: themeColors.white,
   },
- 
+
   center: {
     fontSize: APP_FONT_SIZE.h4,
     fontWeight: '600',
     color: themeColors.black,
+  },
+  tag: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  tagIcon: {
+    marginLeft: 5,
   },
 });
 

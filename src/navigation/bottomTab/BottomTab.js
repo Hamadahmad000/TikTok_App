@@ -47,28 +47,21 @@ export default function BottomTab() {
           onclick={() => setScreen(2)}
         />
         <TouchableOpacity
-          style={[
-            styles.PostIconDiv,
-            {
-              backgroundColor:
-                screen == 2 || screen == 3 || screen == 4 || screen == 5
-                  ? 'black'
-                  : 'white',
-            },
-          ]}
+          style={[styles.PostIconDiv]}
           onPress={() => setScreen(3)}>
-          <Text
-            style={[
-              styles.PostIcon,
-              {
-                color:
-                  screen == 2 || screen == 3 || screen == 4 || screen == 5
-                    ? 'white'
-                    : 'black',
-              },
-            ]}>
-            +
-          </Text>
+          {screen == 1 ? (
+            <Image
+              source={require('../../assets/icons/addVIdeoLight.png')}
+              style={styles.PostIcon}
+              resizeMode="contain"
+            />
+          ) : (
+            <Image
+              source={require('../../assets/icons/ddVideoDark.png')}
+              style={styles.PostIconDark}
+              resizeMode="contain"
+            />
+          )}
         </TouchableOpacity>
         <ScreensIcons
           icons={require('../../assets/icons/messageStroke.png')}

@@ -1,10 +1,12 @@
-import {View, Text} from 'react-native';
+import {View, Text, StatusBar} from 'react-native';
 import React, {useState} from 'react';
 import styles from './homeStyle';
 import Following from '../following/Following';
 import Foryou from '../foryou/Foryou';
 import {themeColors} from '../../constant/Theme';
 import {hexToRgbA} from '../../helper/ThemeHelper';
+import ForyouVideos from '../../constant/ForyouConstant';
+
 export default function Home() {
   const [screen, setscreen] = useState(2);
   function followingScreen() {
@@ -13,9 +15,11 @@ export default function Home() {
   function ForyouScreen() {
     setscreen(2);
   }
+
+  // console.log(ForyouVideos);
   return (
     <View style={styles.container}>
-      {screen == 1 ? <Following /> : <Foryou />}
+      {screen == 1 ? <Following /> : <Foryou data={ForyouVideos[0]} />}
       <View style={styles.changeScreen}>
         <Text
           style={[
