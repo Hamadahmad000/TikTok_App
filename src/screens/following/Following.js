@@ -13,7 +13,7 @@ import styles from './followingStyle';
 export default function Following({data}) {
   const {channelName, uri, caption, musicName, likes, comments, avatarUrl} =
     data;
-  console.log(channelName, uri, caption, musicName, likes, comments, avatarUrl);
+
   const discAnimateValue = useRef(new Animated.Value(0)).current;
   const disAnimation = {
     transform: [
@@ -38,7 +38,12 @@ export default function Following({data}) {
 
   return (
     <View style={styles.container}>
-      <Video source={uri} style={styles.backgroundVideo} resizeMode={'cover'} />
+      <Video
+        source={uri}
+        style={styles.backgroundVideo}
+        resizeMode={'cover'}
+        repeat={true}
+      />
       <View style={styles.screenDetils}>
         <View style={styles.leftSide}>
           <Text style={styles.userName}>{channelName}</Text>

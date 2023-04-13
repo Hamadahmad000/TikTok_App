@@ -7,13 +7,17 @@ import {
   Animated,
   Easing,
 } from 'react-native';
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Video from 'react-native-video';
 import styles from './foryouStyle';
+import Share from '../../components/ShareVideo/Share';
+import Loader from '../Loader/Loader';
 export default function Foryou({data}) {
+  const [isLoading, setisLoading] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const {channelName, uri, caption, musicName, likes, comments, avatarUrl} =
     data;
-  console.log(channelName, uri, caption, musicName, likes, comments, avatarUrl);
+
   const discAnimateValue = useRef(new Animated.Value(0)).current;
   const disAnimation = {
     transform: [
@@ -35,7 +39,9 @@ export default function Foryou({data}) {
       }),
     ).start();
   }, [discAnimateValue]);
-
+  function HandleShare() {
+    setIsVisible(true);
+  }
   return (
     <View style={styles.container}>
       <Video source={uri} style={styles.backgroundVideo} resizeMode={'cover'} />
@@ -78,7 +84,9 @@ export default function Foryou({data}) {
             />
             <Text style={styles.rightSizeIconText}>{comments}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.rightSizeIconDiv}>
+          <TouchableOpacity
+            style={styles.rightSizeIconDiv}
+            onPress={HandleShare}>
             <Image
               source={require('../../assets/icons/share.png')}
               style={styles.rigsideIcons}
@@ -94,6 +102,7 @@ export default function Foryou({data}) {
           </TouchableOpacity>
         </View>
       </View>
+      <Share isVisible={isVisible} setIsVisible={setIsVisible} />
     </View>
   );
 }

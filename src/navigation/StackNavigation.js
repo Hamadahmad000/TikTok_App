@@ -6,6 +6,7 @@ import EditProfile from '../screens/editProfile/EditProfile';
 import DirectMessages from '../screens/directMessages/DirectMessage';
 import Setting from '../screens/settings/Setting';
 import FindFriends from '../screens/findFriends/FindFriends';
+import Splash from '../screens/splash/Splash';
 const Stack = createStackNavigator();
 const customHeader = {
   headerShown: false,
@@ -14,6 +15,7 @@ export default function StackNavigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="Splash" component={Splash} options={customHeader} />
         <Stack.Screen
           name="BottomTab"
           component={BottomTab}

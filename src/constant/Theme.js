@@ -2,7 +2,7 @@ export const themeColors = {
   white: '#ffffff',
   black: '#000000',
   fontGray: '#808080',
-  lightGray: '#ededed',
+  lightGray: '#E8E8E7',
   musturd: '#ED7360',
   lightGreen: '#67DDA0',
   fbBlue: '#3173F1',
