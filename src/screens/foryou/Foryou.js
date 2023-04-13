@@ -1,11 +1,41 @@
-import {View, Text, Image, TouchableOpacity, StatusBar} from 'react-native';
-import React from 'react';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  StatusBar,
+  Animated,
+  Easing,
+} from 'react-native';
+import React, {useEffect, useRef} from 'react';
 import Video from 'react-native-video';
 import styles from './foryouStyle';
 export default function Foryou({data}) {
   const {channelName, uri, caption, musicName, likes, comments, avatarUrl} =
     data;
   console.log(channelName, uri, caption, musicName, likes, comments, avatarUrl);
+  const discAnimateValue = useRef(new Animated.Value(0)).current;
+  const disAnimation = {
+    transform: [
+      {
+        rotate: discAnimateValue.interpolate({
+          inputRange: [0, 1],
+          outputRange: ['0deg', '360deg'],
+        }),
+      },
+    ],
+  };
+  useEffect(() => {
+    Animated.loop(
+      Animated.timing(discAnimateValue, {
+        toValue: 1,
+        duration: 3000,
+        easing: Easing.linear,
+        useNativeDriver: false,
+      }),
+    ).start();
+  }, [discAnimateValue]);
+
   return (
     <View style={styles.container}>
       <Video source={uri} style={styles.backgroundVideo} resizeMode={'cover'} />
@@ -22,7 +52,7 @@ export default function Foryou({data}) {
           </View>
         </View>
         <View style={styles.rightSide}>
-          <TouchableOpacity>
+          <TouchableOpacity style={styles.rightSizeIconDiv}>
             <Image
               source={require('../../assets/img/user.jpg')}
               style={styles.rigsideProfileIcon}
@@ -32,31 +62,34 @@ export default function Foryou({data}) {
               style={styles.FollowIcon}
             />
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity style={styles.rightSizeIconDiv}>
             <Image
               source={require('../../assets/icons/Like.png')}
               style={styles.rigsideIcons}
               resizeMode="contain"
             />
+            <Text style={styles.rightSizeIconText}>{likes}</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity style={styles.rightSizeIconDiv}>
             <Image
               source={require('../../assets/icons/comment.png')}
               style={styles.rigsideIcons}
               resizeMode="contain"
             />
+            <Text style={styles.rightSizeIconText}>{comments}</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity style={styles.rightSizeIconDiv}>
             <Image
               source={require('../../assets/icons/share.png')}
               style={styles.rigsideIcons}
               resizeMode="contain"
             />
+            <Text style={styles.rightSizeIconText}>Share</Text>
           </TouchableOpacity>
           <TouchableOpacity>
-            <Image
+            <Animated.Image
               source={require('../../assets/icons/Ellipse.png')}
-              style={styles.EllipsIcon}
+              style={[styles.EllipsIcon, disAnimation]}
             />
           </TouchableOpacity>
         </View>
